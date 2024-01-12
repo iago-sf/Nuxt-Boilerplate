@@ -1,0 +1,7 @@
+$family: "Poppins", sans-serif;
+
+@use 'vuetify/settings' with (
+    $body-font-family: $family,
+);
+
+html { overflow-y: auto };
