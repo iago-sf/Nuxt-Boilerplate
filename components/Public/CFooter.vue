@@ -33,7 +33,7 @@
 
       <v-col cols="12" md="6" class="none:text-center md:text-right px-0">
         <a
-          href="https://github/iago-sf/Nuxt-Boilerplate"
+          href="https://github.com/iago-sf/Nuxt-Boilerplate"
           class="text-white group transition duration-500 block w-fit none:m-auto md:ml-auto md:mr-0"
         >
           License

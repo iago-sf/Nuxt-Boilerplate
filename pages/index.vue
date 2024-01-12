@@ -28,13 +28,13 @@ definePageMeta({
       <h2 class="text-green-600 font-bold text-2xl underline block mt-5"># How to use it?</h2>
       <p class="text-gray-600 text-lg mt-2">
         You can find a quick guide on how to use it on
-        <a href="https://github/iago-sf/Nuxt-Boilerplate" class="font-bold underline">Github</a>
+        <a href="https://github.com/iago-sf/Nuxt-Boilerplate" class="font-bold underline">Github</a>
       </p>
 
       <h2 class="text-green-600 font-bold text-2xl underline block mt-5"># Licenses</h2>
       <p class="text-gray-600 text-lg mt-2">
         This project is licensed under the MIT license. You can find more information about it on
-        <a href="https://github/iago-sf/Nuxt-Boilerplate" class="font-bold underline"
+        <a href="https://github.com/iago-sf/Nuxt-Boilerplate" class="font-bold underline"
           >repository license</a
         >.
       </p>
