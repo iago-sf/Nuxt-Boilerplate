@@ -1,7 +1,7 @@
 import { getServerSession } from "#auth"
 
 export default eventHandler(async (event) => {
-  if (!event.node.req.url?.startsWith("/api/protected")) {
+  if (!event.node.req.url?.startsWith("/api/dashboard")) {
     return
   }
 
