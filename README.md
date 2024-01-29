@@ -58,7 +58,7 @@ Please ensure that these variables are correctly set in your .env file. You can 
 > Remember that you'll need to pass these variables as server variables when starting the server in production. You can do it with a command similar to this one:
 >
 > ```bash
-> DATABASE="YourDatabaseURL" AUTH_ORIGIN="YourAppURL" AUTH_SECRET="YourAppSecret" NEXTAUTH_URL="YourAppURL" node ./.output/server/index.mjs
+> DATABASE_URL="YourDatabaseURL" AUTH_ORIGIN="YourAppURL" AUTH_SECRET="YourAppSecret" NEXTAUTH_URL="YourAppURL" node ./.output/server/index.mjs
 > ```
 
 ## Credits
