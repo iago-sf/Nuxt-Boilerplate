@@ -10,7 +10,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  sourcemap: { server: false, client: false },
   modules: [
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) =>
