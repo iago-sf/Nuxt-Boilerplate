@@ -1,10 +1,12 @@
 import { ref, watch, reactive } from "vue"
 import debounce from "lodash.debounce"
 
+type SortItem = { key: string; order?: boolean | "asc" | "desc" }
+
 interface TableData {
   page: number
   itemsPerPage: number
-  sortBy: string[]
+  sortBy: SortItem[]
   items: any[]
   search: any
   itemsLength: string | number

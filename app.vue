@@ -7,11 +7,16 @@ provide("color", color)
 provide("showToast", showToast)
 
 useHead({
-  title: process.env.APPNAME || "Nuxt boilerplate",
+  titleTemplate: (titleChunk: string | undefined) => {
+    return titleChunk
+      ? `${titleChunk} | ${process.env.APP_NAME || "Nuxt boilerplate"}`
+      : process.env.APP_NAME || "Nuxt boilerplate"
+  },
+
   meta: [
     {
       name: "author",
-      content: process.env.AUTHOR || "Nuxt boilerplate",
+      content: process.env.AUTHOR || "Github: @ismaelcmajada & @iago-sf",
     },
   ],
   link: [

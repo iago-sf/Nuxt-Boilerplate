@@ -1,6 +1,8 @@
-<script setup>
+<script setup lang="ts">
+import type { Headers } from "@/types/Headers.type"
+
 definePageMeta({
-  title: "Usuarios",
+  title: "Users",
   auth: true,
   layout: "dashboard",
 })
@@ -18,7 +20,7 @@ const {
   openDialog,
 } = useDialogs()
 
-const headers = [
+const headers: Headers = [
   { title: "ID", key: "id", align: "center" },
   { title: "Name", key: "name", align: "center" },
   { title: "Email", key: "email", align: "center" },
@@ -27,16 +29,17 @@ const headers = [
     key: "actions",
     align: "center",
     sortable: false,
-    exportable: false,
   },
 ]
 
-const modifiedRows = {}
+const modifiedRows: Record<string, (item: any) => any> = {}
 
 endPoint.value = "/dashboard/users"
 </script>
 
 <template>
+  <Title>Users</Title>
+
   <dashboard-users-form-dialog
     :show="showFormDialog"
     @closeDialog="showFormDialog = false"
@@ -116,6 +119,7 @@ endPoint.value = "/dashboard/users"
             :key="header.key"
           >
             <v-text-field
+              v-if="header.key"
               v-model="tableData.search[header.key]"
               @input="updateItems"
               type="text"
@@ -126,8 +130,10 @@ endPoint.value = "/dashboard/users"
         </tr>
       </template>
 
-      <template v-for="(modifier, key) in modifiedRows" v-slot:[`item.${key}`]="{ item }">
-        {{ modifier(item[key]) }}
+      <template v-for="(modifier, key) in modifiedRows" v-slot:[`item.${key}`]="slotProps">
+        <template v-if="slotProps && 'item' in slotProps && slotProps.item">
+          {{ modifier(slotProps.item[key]) }}
+        </template>
       </template>
 
       <template v-slot:item.actions="{ item }">

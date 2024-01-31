@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       )
     },
     "@sidebase/nuxt-auth",
+    "@pinia/nuxt",
   ],
 
   auth: {
@@ -38,6 +39,7 @@ export default defineNuxtConfig({
   vite: {
     ssr: { noExternal: ["vuetify"] },
   },
+
   routeRules: RouteRules,
 
   // @ts-ignore
@@ -51,5 +53,9 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: "node-server",
+  },
+
+  pinia: {
+    storesDirs: ["./stores/**"],
   },
 })

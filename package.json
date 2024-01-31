@@ -23,11 +23,16 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "@pinia/nuxt": "^0.5.1",
     "@prisma/client": "^5.8.1",
     "@types/lodash.debounce": "^4.0.9",
     "bcrypt": "^5.1.1",
     "next-auth": "4.22.5",
+    "pinia": "^2.1.7",
     "vite-plugin-vuetify": "^2.0.1",
     "vuetify": "^3.4.9"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

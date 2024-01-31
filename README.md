@@ -14,10 +14,12 @@ This repository is a template built on Nuxt that makes use of different technolo
 
 - [**Tailwindcss**](https://tailwindcss.com/docs/installation): Designing more complex elements without the need to generate custom CSS
 
+- [**Pinia**](https://pinia.vuejs.org/): State manager
+
 ## Getting Started
 
 1. As a first step, it's essential to configure the `.env` file. You can take the file `.env.example` as a start.
-2. Download the libraries with `npm install` (Note: `pnpm` may be required for some Sidebase dependencies).
+2. Download the libraries with `npm install`.
 3. Run Prisma migrations with `npx prisma migrate dev`.
 4. Start coding with `npm run dev` running to see realtime changes.
 
