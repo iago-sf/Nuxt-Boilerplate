@@ -9,4 +9,4 @@ dist
 .DS_Store
 *.db*
 .npmrc
-./prisma/migrations
+prisma/migrations
