@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue"
 import appLogo from "@/assets/images/logo.png"
 
 const { data, signOut } = useAuth()
-const drawer = ref(null)
+const drawer: Ref<boolean> = ref(false)
 </script>
 
 <template>
@@ -16,7 +16,7 @@ const drawer = ref(null)
 
     <v-divider></v-divider>
     <v-list nav>
-      <v-list-item :title="data?.user?.name" prepend-icon="mdi-account"></v-list-item>
+      <v-list-item :title="data?.user?.name || 'User'" prepend-icon="mdi-account"></v-list-item>
     </v-list>
 
     <template v-for="pageRoute in Routes">
@@ -34,8 +34,8 @@ const drawer = ref(null)
                 v-bind="props"
                 :title="pageRoute.value"
                 :prepend-icon="pageRoute.icon"
-                :active="$route.includes(pageRoute.path)"
-                @click="openDrawer"
+                :active="$route.path.includes(pageRoute?.path || '')"
+                @click="drawer = true"
               ></v-list-item>
             </template>
             <v-list-item

@@ -33,7 +33,7 @@ useSeoMeta({})
 
 <template>
   <NuxtLayout>
-    <v-snackbar v-model="toast" :color="color" :timeout="3000" location="bottom">
+    <v-snackbar v-model="toast" :color="color" :timeout="5000" location="bottom">
       {{ message }}
     </v-snackbar>
     <NuxtPage />

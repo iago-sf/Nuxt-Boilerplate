@@ -17,7 +17,7 @@ const dialogState = computed({
 
 const form = ref(false)
 const formData = useForm({
-  id: undefined,
+  id: -1,
   name: "",
   email: "",
   password: "",
@@ -33,7 +33,7 @@ watch(dialogState, (value) => {
       formData.email.value = props.item.email
       formData.password.value = ""
     } else if (props.type === "create") {
-      formData.id.value = undefined
+      formData.id.value = -1
       formData.name.value = ""
       formData.email.value = ""
       formData.password.value = ""

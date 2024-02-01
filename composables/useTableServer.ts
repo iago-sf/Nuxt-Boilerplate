@@ -52,7 +52,7 @@ export default function useTableServer() {
     const searchJson = JSON.stringify(cleanedSearch)
     const sortByJson = JSON.stringify(tableData.sortBy)
 
-    await useFetch(`${endPoint.value}/loadItems`, {
+    await $fetch(`${endPoint.value}/loadItems`, {
       baseURL: "/api",
       method: "POST",
       body: {

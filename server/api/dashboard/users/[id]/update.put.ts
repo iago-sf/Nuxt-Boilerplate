@@ -1,18 +1,16 @@
 import { hash } from "bcrypt"
+import { defaultError } from "@/utils/defaultError"
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
+
+  if (!body || !body.id || body.id == -1) defaultError("Invalid user ID")
 
   const user = await prisma.users.findFirst({
     where: { id: body.id },
   })
 
-  if (!user) {
-    throw createError({
-      statusCode: 403,
-      statusMessage: "User not found",
-    })
-  }
+  if (!user) defaultError("User not found")
 
   await prisma.users.update({
     where: {

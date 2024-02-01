@@ -34,18 +34,14 @@ export const useForm = (data: Record<string, any>) => {
 
   const post = async (url: string, options?: ResponseOptions) => {
     try {
-      const { data, error } = await useFetch(`${url}/store`, {
+      const data = await $fetch(`${url}/store`, {
         baseURL: "/api",
         method: "POST",
         body: JSON.stringify(cleanData()),
       })
 
-      if (data.value && options?.onSuccess) {
-        options.onSuccess(data.value)
-      }
-
-      if (error.value && options?.onError) {
-        options.onError(error.value)
+      if (data && options?.onSuccess) {
+        options.onSuccess(data)
       }
     } catch (error) {
       if (options?.onError) options.onError(error)
@@ -55,18 +51,14 @@ export const useForm = (data: Record<string, any>) => {
 
   const put = async (url: string, options?: ResponseOptions) => {
     try {
-      const { data, error } = await useFetch(`${url}/update`, {
+      const data = await $fetch(`${url}/update`, {
         baseURL: "/api",
         method: "PUT",
         body: JSON.stringify(cleanData()),
       })
 
-      if (data.value && options?.onSuccess) {
-        options.onSuccess(data.value)
-      }
-
-      if (error.value && options?.onError) {
-        options.onError(error.value)
+      if (data && options?.onSuccess) {
+        options.onSuccess(data)
       }
     } catch (error) {
       if (options?.onError) options.onError(error)

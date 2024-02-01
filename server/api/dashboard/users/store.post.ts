@@ -1,4 +1,5 @@
 import { hash } from "bcrypt"
+import { defaultError } from "@/utils/defaultError"
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -9,12 +10,7 @@ export default defineEventHandler(async (event) => {
     },
   })
 
-  if (userExists) {
-    throw createError({
-      statusCode: 403,
-      statusMessage: "User already exists",
-    })
-  }
+  if (userExists) defaultError("User already exists")
 
   await prisma.users.create({
     data: {

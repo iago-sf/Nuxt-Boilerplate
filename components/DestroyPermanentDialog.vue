@@ -42,15 +42,9 @@ const submit = async () => {
       return
     }
 
-    const { data, error } = await useFetch(url, pack)
+    const data: Record<string, string> = await $fetch(url, pack)
 
-    if (error.value) {
-      showToast(error.value.statusMessage, "error")
-      return
-    }
-
-    //@ts-ignore
-    showToast(data?.value?.message)
+    showToast(data?.message)
 
     emit("reloadItems")
     dialogState.value = false
